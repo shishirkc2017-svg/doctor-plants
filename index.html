@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doctor Plants - Organic Revolution & E-Commerce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#hero" class="logo-link">
+        <img src="logo.png" alt="Doctor Plants Logo" class="logo" />
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#agriculture">Agriculture</a></li>
+          <li><a href="#environment">Environment</a></li>
+          <li><a href="#animal-science">Animal Science</a></li>
+          <li><a href="#diplomats">Diplomats</a></li>
+          <li><a href="#join">Join Us</a></li>
+          <li><a href="#cart" class="cart-link"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+          <li><a href="#" id="seller-login-btn" class="btn small-btn">Seller Login</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-content container">
+      <h1>The Future is <span class="highlight">Organic</span></h1>
+      <p>
+        Doctor Plants is a Nepal-based platform uplifting rural farmers through organic agriculture, environmental care, and animal science—empowering sustainable lives and healthy soil.
+      </p>
+      <div>
+        <a href="#agriculture" class="btn primary-btn">Shop Organic Products</a>
+        <a href="#join" class="btn secondary-btn">Join the Organic Revolution</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+        alt="Farmer tending to organic plants"/>
+    </div>
+  </section>
+  
+  <!-- E-COMMERCE: AGRICULTURE PRODUCTS -->
+  <main>
+    <section id="agriculture" class="container section-products">
+      <h2>Agriculture Products</h2>
+      <div class="price-toggle-container">
+        <label><input type="radio" name="priceType" value="retail" checked /> Retail</label>
+        <label><input type="radio" name="priceType" value="wholesale" /> Wholesale</label>
+      </div>
+      <div class="cards-grid" id="products-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+    
+    <!-- ENVIRONMENT SECTION -->
+    <section id="environment" class="container">
+      <h2>Environment Care</h2>
+      <div class="cards-grid two-columns">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1518831953459-8c16e38cfb59?auto=format&fit=crop&w=400&q=80" alt="Recycled flower pots" />
+          <h3>Eco-Friendly Flower Pots</h3>
+          <p>Recycled flower pots made sustainably from waste plastics.</p>
+          <button class="btn primary-btn add-to-cart-btn" data-id="1001">Add to Cart</button>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Waste management" />
+          <h3>Zero Waste Services</h3>
+          <p>Hotel and organic waste management, composting, and recycling solutions.</p>
+          <a href="#contact" class="btn secondary-btn">Contact for Service</a>
+        </article>
+      </div>
+    </section>
+    
+    <!-- ANIMAL SCIENCE SECTION -->
+    <section class="animal-science container" id="animal-science">
+      <h2>Animal Science</h2>
+      <p>Supporting organic practices for animal health aligned with sustainable agriculture and environmental stewardship.</p>
+      <img src="https://images.unsplash.com/photo-1562004760-aceed43efeb1?auto=format&fit=crop&w=800&q=80" alt="Animal health and farm" class="animal-img" />
+    </section>
+    
+    <!-- DIPLOMATS SECTION -->
+    <section id="diplomats" class="diplomats-section container">
+      <h2>Become a Doctor Plants Diplomat</h2>
+      <p>Are you passionate about organic farming, rural empowerment, or sustainable solutions? Join our network of Diplomats and share your expertise with communities across Nepal!</p>
+      <div class="diplomat-category-buttons">
+        <button class="btn filter-btn" data-filter="all">All</button>
+        <button class="btn filter-btn" data-filter="education">Education</button>
+        <button class="btn filter-btn" data-filter="location">Location</button>
+        <button class="btn filter-btn" data-filter="experience">Experience</button>
+        <button class="btn filter-btn" data-filter="job">Current Job</button>
+        <button class="btn filter-btn" data-filter="talents">Special Talents</button>
+      </div>
+      <div class="diplomat-cards" id="diplomat-list">
+        <!-- Diplomat cards populated by JS -->
+      </div>
+      <button class="btn primary-btn" id="show-form-btn">Become a Diplomat</button>
+      <form id="diplomats-form" class="diplomats-form" novalidate>
+        <h3>Diplomat Profile Submission</h3>
+        <label for="fullName">Full Name <span class="required">*</span></label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+        <label for="education">Educational Background <span class="required">*</span></label>
+        <input type="text" id="education" name="education" placeholder="e.g., MSc in Organic Agriculture" required />
+        <label for="location">Current Location <span class="required">*</span></label>
+        <input type="text" id="location" name="location" placeholder="City, Country" required />
+        <label for="experience">Past Trainer Experiences <span class="required">*</span></label>
+        <textarea id="experience" name="experience" placeholder="Briefly describe your training experience" rows="3" required></textarea>
+        <label for="currentJob">Current Job <span class="required">*</span></label>
+        <input type="text" id="currentJob" name="currentJob" placeholder="Your current job title" required />
+        <label for="specialTalents">Special Talents <span class="required">*</span></label>
+        <input type="text" id="specialTalents" name="specialTalents" placeholder="E.g., Soil regeneration, permaculture" required />
+        <label for="formPreparation">Upload Documents (optional)</label>
+        <input type="file" id="formPreparation" name="formPreparation" accept=".pdf,.doc,.docx,.jpg,.png" />
+        <button type="submit" class="btn primary-btn submit-btn">Submit Profile</button>
+        <button type="button" class="btn secondary-btn cancel-btn" id="cancel-form-btn">Cancel</button>
+        <p class="form-message" id="form-message"></p>
+      </form>
+    </section>
+    
+    <!-- JOIN SECTION -->
+    <section id="join" class="join-section container">
+      <h2>Join the Organic Revolution with Doctor Plants</h2>
+      <p class="subheadline">Together, we uplift rural farmers, save the soil, and promote sustainable, earth-friendly farming practices.</p>
+      <ul class="join-actions">
+        <li><i class="fas fa-envelope"></i> <a href="#newsletter">Subscribe to our newsletter</a></li>
+        <li><i class="fas fa-chalkboard-teacher"></i> <a href="#training">Participate in training programs</a></li>
+        <li><i class="fas fa-leaf"></i> <a href="#agriculture">Support local organic farmers</a></li>
+        <li><i class="fas fa-apple-alt"></i> <a href="#subscription">Join our fresh produce subscription</a></li>
+        <li><i class="fas fa-users"></i> <a href="#diplomats">Become a Diplomat expert or trainer</a></li>
+      </ul>
+      <div class="join-cta">
+        <a href="#diplomats" class="btn primary-btn">Become a Diplomat</a>
+        <a href="#impact-stories" class="btn secondary-btn">Read Impact Stories</a>
+      </div>
+      <div class="join-social">
+        <p>Follow us:</p>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </section>
+    
+    <!-- IMPACT STORIES/TESTIMONIALS -->
+    <section id="impact-stories" class="impact-section container">
+      <h2>Impact Stories</h2>
+      <div class="impact-stories">
+        <article class="impact-story">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Farmer Story" />
+          <h3>Empowering Maya in Pokhara</h3>
+          <p>“Doctor Plants showed me how to turn my small farm into an organic haven. Now, my family and neighbors thrive on healthy food and sustainable income!”</p>
+        </article>
+        <article class="impact-story">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Soil Health Story" />
+          <h3>Saving Soil, Saving the Future</h3>
+          <p>Our soil health program helped hundreds of farmers restore fertility and resilience to their land, ensuring a greener future for Nepal.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  
+  <!-- CART MODAL -->
+  <div id="cart-modal" class="modal hidden" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <span class="close-btn" id="close-cart-modal" tabindex="0" role="button" aria-label="Close cart">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-bottom">
+        <strong>Total: NPR <span id="cart-total">0</span></strong>
+        <button id="checkout-btn" class="btn primary-btn">Checkout</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- SELLER LOGIN MODAL -->
+  <div id="seller-login-modal" class="modal hidden" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <span class="close-btn" id="close-login-modal" tabindex="0" role="button" aria-label="Close login">&times;</span>
+      <h3>Seller Login</h3>
+      <form id="seller-login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+        <button type="submit" class="btn primary-btn">Login</button>
+      </form>
+      <p id="login-error-msg" class="error-msg"></p>
+    </div>
+  </div>
+  
+  <!-- FOOTER -->
+  <footer class="footer container" id="contact">
+    <div class="footer-info">
+      <h3>Doctor Plants - Nepal</h3>
+      <p>Educating and empowering Nepalese farmers for organic, sustainable futures.</p>
+      <p>Email: info@doctorplants.np | Phone: +977-1-1234567</p>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
